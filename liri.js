@@ -61,5 +61,30 @@ omdb.get({
     console.log('got response:', res);
 }).catch(console.error);
 
+// var fs = require("fs");
+
+// fs.readFile("random.txt", "utf8", function(error, data) {
+
+// spotify.search({ type: 'track', query: 'random.txt' }, function(err, data) {
+  
+//   if (err) {
+//     return console.log('Error occurred: ' + err);
+//   }
+  
+//   console.log(JSON.stringify(data, null, 2)); 
+
+// });
+
+//   console.log(data);
+
+//   var dataArr = data.split(",");
+
+//   We will then re-display the content as an array for later use.
+//   console.log(dataArr);
+  
+
+// });
+
+
 
 
