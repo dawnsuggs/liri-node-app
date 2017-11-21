@@ -13,7 +13,6 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
 });
 
 
-
 var Spotify = require('node-spotify-api');
  console.log(Spotify)
 var spotify = new Spotify({
@@ -28,3 +27,39 @@ spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, d
   
 console.log(JSON.stringify(data, null, 2)); 
 });
+
+const omdb = require('omdbapi');
+
+// console.log(omdb);
+
+omdb.search({
+    search: "eraserhead",  
+    year: "2011",               
+    imdbRating: "7.4",
+    rottenTomatoes: "91%",
+    country: "USA",
+    language: "English",
+    plot: "Henry Spencer tries to survive his industrial environment, his angry girlfriend, and the unbearable screams of his newly born mutant child.",
+   	actors: "Jack Nance, Charlotte Stewart, Allen Joseph, Jeanne Bates"
+}).then(res => {
+	console.log('got response:', res);
+}).catch(console.error);
+ 
+omdb.get({
+    id: 'tt0074486',            
+    title: "eraserhead",   
+    year: "2011",               
+    imdbRating: "7.4",
+
+    rottenTomatoes: "91%",
+    country: "USA",
+    language: "English",
+    plot: "Henry Spencer tries to survive his industrial environment, his angry girlfriend, and the unbearable screams of his newly born mutant child.",
+    actors: "Jack Nance, Charlotte Stewart, Allen Joseph, Jeanne Bates"
+  
+}).then(res => {
+    console.log('got response:', res);
+}).catch(console.error);
+
+
+
